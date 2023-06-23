@@ -29,7 +29,7 @@
                     </div>
 						<div class="login-wrap p-4 p-md-5">
 							
-							<form method="POST" action="logintherapist.php" class="signin-form">
+							<form method="POST" action="therapistprofile.php" class="signin-form">
 			      		<div class="form-group mt-3">
 			      			<input type="email" class="form-control" id="email" name="email" required>
 			      			<label class="form-control-placeholder" for="Email">Email</label>
