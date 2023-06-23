@@ -1,33 +1,4 @@
-<?php   require_once "connection.php"; 
-	$conn = OpenConnection();
-   if( !isset($_SESSION)){
-	    session_start();
-}
-if(isset($_POST['login'])){
-	
-	$n=$_POST['email'];
-	$p=$_POST['password'];
-	$s='accepted';
-    $t=" SELECT * FROM therapist WHERE email='$n' AND password='$p' And status='$s'";
-
-	 $r=sqlsrv_query($conn,$t);
-	
-	
-    if(sqlsrv_has_rows($r)==1){
-		$_SESSION['name']=$n;
-		$_SESSION['success']="welcome dear";
-		header('location:therapistprofile.php');
-}
-    else{
-		echo "Username is not found";
-}
-
-}
-if(isset($_GET['logout'])){
-	session_destroy();
-	unset($_SESSION['name']);
-	header('location:logintherapist.php');
-}?>
+<?php include('connection.php');?>
 <!doctype html>
 <html lang="en">
   <head>
@@ -54,8 +25,7 @@ if(isset($_GET['logout'])){
 			<div class="row justify-content-center">
 				<div class="col-md-7 col-lg-5">
 					<div class="wrap">
-						<div class="img" style="background-image: url(pexels-alex-green-5699431.jpg)">
-                    </div>
+						<div class="img" style="background-image: url(pexels-alex-green-5699431.jpg)"></div>
 						<div class="login-wrap p-4 p-md-5">
 							
 							<form method="POST"  class="signin-form">
