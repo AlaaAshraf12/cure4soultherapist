@@ -1,5 +1,6 @@
 <?php require_once "connection.php";?>
 <?php require_once "index.php"; ?>
+<?php require_once "logform.php"; ?>
 
 
 

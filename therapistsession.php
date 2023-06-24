@@ -42,6 +42,7 @@
        
         require_once "connection.php";
         require_once "index.php"; 
+        require_once "logform.php"; 
         $conn = OpenConnection();
         // Check if the therapist is logged in
         if (isset($_SESSION['name'])) {
