@@ -14,6 +14,33 @@
 
 	</head>
 	<body>
+	<section class="ftco-section" style="margin-top: -80px;">
+		<div class="container">
+			<div class="d-flex">
+				<div class="w-100">
+					<h3 class="mb-4" style="text-align: center;color:#1e6091;font-weight: bold;">Sign In Cure4Soul</h3>
+				</div>
+					  
+			</div>
+			<div class="row justify-content-center">
+				<div class="col-md-7 col-lg-5">
+					<div class="wrap">
+						<div class="img" style="background-image: url(pexels-alex-green-5699431.jpg)">
+                    </div>
+						<div class="login-wrap p-4 p-md-5">
+							
+							<form method="POST" action="therapistprofile.php" class="signin-form">
+			      		<div class="form-group mt-3">
+			      			<input type="email" class="form-control" id="email" name="email" required>
+			      			<label class="form-control-placeholder" for="Email">Email</label>
+			      		</div>
+		            <div class="form-group">
+		              <input id="password-field" type="password" class="form-control"id="password" name="password" required>
+		              <label class="form-control-placeholder" for="password">Password</label>
+		              <span toggle="#password-field" class="fa fa-fw fa-eye field-icon toggle-password"></span>
+		            </div>
+		            <div class="form-group">
+		            	<button type="submit" name="login" class="form-control btn  rounded submit px-3" style="background-color:orange;color:white">Sign In</button>
 						<?php if(isset($error)) {?>
             <p><?php echo $error ;?></p>
              <?php } ?>
@@ -35,47 +62,28 @@ if(isset($_POST['login'])){
     if(sqlsrv_has_rows($r)==1){
 		$_SESSION['name']=$n;
 		$_SESSION['success']="welcome dear";
-		header('location: therapistprofile.php');
+		header('location:therapistprofile.php');
 }
-    else{?>
-      <section class="ftco-section" style="margin-top: -80px;">
-      <div class="container">
-        <div class="d-flex">
-          <div class="w-100">
-            <h3 class="mb-4" style="text-align: center;color:#1e6091;font-weight: bold;">Sign In Cure4Soul</h3>
-          </div>
-              
-        </div>
-        <div class="row justify-content-center">
-          <div class="col-md-7 col-lg-5">
-            <div class="wrap">
-              <div class="img" style="background-image: url(pexels-alex-green-5699431.jpg)">
-                      </div>
-              <div class="login-wrap p-4 p-md-5">
-                
-                <form method="POST" action="therapistprofile.php" class="signin-form">
-                  <div class="form-group mt-3">
-                    <input type="email" class
-                    ="form-control" id="email" name="email" required>
-                    <label class="form-control-placeholder" for="Email">Email</label>
-                  </div>
-                  <div class="form-group">
-                    <input id="password-field" type="password" class="form-control"id="password" name="password" required>
-                    <label class="form-control-placeholder" for="password">Password</label>
-                    <span toggle="#password-field" class="fa fa-fw fa-eye field-icon toggle-password"></span>
-                  </div>
-                  <div class="form-group">
-                    <button type="submit" name="login" class="form-control btn  rounded submit px-3" style="background-color:orange;color:white">Sign In</button>
-              <?php    }
+    else{
+		echo "Username is not found";
+}
 
 }
 if(isset($_GET['logout'])){
 	session_destroy();
 	unset($_SESSION['name']);
-	header('location: index.php');
+	header('location:logintherapist.php');
 }?>
 		            </div>
-		          
+		            <div class="form-group d-md-flex">
+		            	<div class="w-50 text-left">
+			            	<label class="checkbox-wrap checkbox-primary mb-0" style="color:#1e6091;">Remember Me
+									  <input type="checkbox" checked>
+									  <span class="checkmark"></span>
+										</label>
+									</div>
+									
+		            </div>
 		          </form>
 		          
 		        </div>
