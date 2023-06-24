@@ -152,7 +152,7 @@
           <a href="therapistsession.php">My Sessions</a>
           
           <button class="btn1" style="width:70px;height:40px;background-color:#dddd;border-color:#dddd;border-radius:8px;">
-          <a style="text-decoration:none;color:white;" href="logintherapist.php? logout='1'">log out </a></button>
+          <a style="text-decoration:none;color:white;" href="index.php?logout=1">log out </a></button>
           
         </div>
         
