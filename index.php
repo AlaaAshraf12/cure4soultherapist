@@ -1,5 +1,6 @@
 <?php require_once "connection.php";
-require_once "logform.php"; $conn = OpenConnection();?>
+require_once "logform.php"; 
+$conn = OpenConnection();?>
 <!doctype html>
 <html lang="en">
   <head>
