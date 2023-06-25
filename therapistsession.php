@@ -1,4 +1,4 @@
-<?phprequire_once "connection.php";
+<?php require_once "connection.php";
         require_once "logform.php"; 
         $conn = OpenConnection();?>
         <!DOCTYPE html>
